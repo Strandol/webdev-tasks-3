@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/Strandol/webdev-tasks-3/issues"
   },
-  "homepage": "https://github.com/Strandol/webdev-tasks-3#readme"
+  "homepage": "https://github.com/Strandol/webdev-tasks-3#readme",
+  "dependencies": {
+    "bluebird": "3.5.0",
+    "eslint": "3.7.0",
+    "eslint-config-hrundel": "latest",
+    "fs": "0.0.1-security",
+    "mocha": "3.2.0",
+    "path": "0.12.7"
+  }
 }
