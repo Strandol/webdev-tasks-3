@@ -1,3 +1,17 @@
 {
-  "extends": "hrundel/node"
+    "extends": "hrundel/node",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "globals"   : {
+        "describe"   : false,
+        "it"         : false,
+        "before"     : false,
+        "beforeEach" : false,
+        "after"      : false,
+        "afterEach"  : false
+    }
 }

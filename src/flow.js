@@ -15,6 +15,12 @@ exports.isStar = true;
  */
 exports.serial = function (operations, callback) {
     Promise.reduce(operations, function (total, operation, i) {
+        if (!(operation instanceof Function)) {
+            callback(new Error('Operation must be a function!'));
+
+            return;
+        }
+
         return new Promise(function (resolve, reject) {
             var cb = function (err, data) {
                 if (err) {
@@ -76,6 +82,12 @@ exports.map = function (items, operation, callback) {
  * @param {Function} callback
  */
 exports.filter = function (items, operation, callback) {
+    if (!(items instanceof Array)) {
+        callback(new Error('Set of items must be array!'));
+
+        return;
+    }
+
     function launchOperations(item) {
         return new Promise(function (resolve, reject) {
             if (!items.length) {
@@ -101,7 +113,7 @@ exports.filter = function (items, operation, callback) {
                 return data[i];
             }));
         }, function (err) {
-            throw new Error(err);
+            callback(new Error(err));
         });
 };
 
